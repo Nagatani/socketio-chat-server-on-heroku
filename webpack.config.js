@@ -38,13 +38,8 @@ module.exports = (env) => {
             options: {
               presets: [
                 [
-                  "@babel/preset-env",
-                  {
-                    "modules": "commonjs",
-                    "targets": {
-                      "node": "current"
-                    }
-                  }
+                  'env',
+                  {'modules': false}
                 ]
               ]
             }
