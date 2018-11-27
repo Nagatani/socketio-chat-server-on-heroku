@@ -8,9 +8,6 @@
     "build": "webpack",
     "heroku-postbuild": "webpack -p"
   },
-  "engine": {
-    "node": "8.x"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
