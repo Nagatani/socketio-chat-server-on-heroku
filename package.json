@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "npx webpack -p"
   },
   "engines": {
     "node": "v8.13.0",
