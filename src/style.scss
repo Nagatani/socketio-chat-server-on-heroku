@@ -1,0 +1,63 @@
+@import "colors";
+@import "base";
+
+body {
+  background: $color-base;
+  color: $color-text;
+}
+a {
+  color: $color-link;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: $color-accent;
+}
+header {
+  height: 82px;
+  padding: 1rem;
+  h1 {
+    text-align: center;
+  }
+}
+
+main {
+  height: calc(100% - 82px);
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-message {
+  flex: 1;
+  list-style: none;
+  font-size: 1rem;
+  margin: 1rem;
+  overflow-x: auto;
+  background-color: #fff;
+  border: 1px solid #232323;
+  li {
+    border-bottom: 1px solid #eee;
+    padding: 0.25rem;
+    background-color: #fff;
+    &:nth-child(odd) {
+      background-color: #f8f8f8;
+    }
+  }
+}
+
+#chat-sender {
+  display: flex;
+  padding: 1rem;
+
+  input[type="text"] {
+    flex: 1;
+    font-size: inherit;
+    font-size: 1.5em;
+    font-family: inherit;
+    padding: 0.25rem;
+  }
+  button {
+    font-size: inherit;
+    font-size: 1.5em;
+    font-family: inherit;
+    padding: 0.25rem;
+  }
+}
