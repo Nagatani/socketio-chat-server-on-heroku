@@ -2,8 +2,7 @@ const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CSSCombPlugin = require('csscomb-webpack-plugin');
 
 // const MODE = 'production';
@@ -77,21 +76,12 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      new CleanWebpackPlugin([
-        'dist/*.html',
-        'dist/*.js',
-        'dist/*.css'
-      ]),
-      new HtmlBeautifyPlugin({
-        config: {
-          html: {
-            end_with_newline: true,
-            indent_size: 2,
-            indent_inner_html: true,
-            unformatted: ['i', 'b', 'span']
-          }
-        },
-        replace: ['type="text/javascript"']
+      new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: [
+          'dist/*.html',
+          'dist/*.js',
+          'dist/*.css'
+        ]
       }),
       new CSSCombPlugin({
         configFile: './.csscomb',
